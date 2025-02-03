@@ -6,8 +6,8 @@
   </div>
 
   <% if current_user %>
-    <div class="pt-12">
-      <%= link_to "Go to Projects", projects_path, local: true, data: { turbo: false} %>
+    <div class="pt-12 text-lg">
+      <%= link_to "Go to Projects", projects_path, local: true, data: { turbo: false}, class: "font-semi-bold underline hover:text-blue-700" %>
     </div>
   <% else %>
     <p class="pt-12 text-lg"><%=link_to "Sign up", new_user_path, local: true, data: { turbo: false}, class: "font-semi-bold underline hover:text-blue-700" %> or <%= link_to "Log in", login_path, local: true, data: { turbo: false}, class: "font-semi-bold underline hover:text-blue-700" %> to continue</p>

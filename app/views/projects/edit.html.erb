@@ -1,0 +1,8 @@
+<div class="w-full">
+  <h1 class="font-bold text-3xl mb-6">Edit <%= @project.title %></h1>
+  <p>Not enough time left to complete this</p>
+
+  <div class="pt-6">
+    <%= link_to "Back to projects", projects_path, local: true, data: { turbo: false}, class: "text-lg font-semi-bold underline hover:text-blue-700"  %>
+  </div>
+</div>

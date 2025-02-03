@@ -1,0 +1,41 @@
+<div class="w-1/2 mx-auto">
+  <h1 class="font-bold text-2xl">Create new project</h1>
+
+  <%= form_with(model: @project, local: true) do |form| %>
+    <% if @project.errors.any? %>
+      <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-8">
+        <p><strong>There were errors with your submission:</strong></p>
+        <ul>
+          <% @project.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= form.label :title, class:"block text-sm/6 font-medium text-gray-900"  %>
+    <div class="mt-2 mb-4">
+      <%= form.text_field :title, class: "block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" %>
+    </div>
+
+    <%= form.label :description, class:"block text-sm/6 font-medium text-gray-900"  %>
+    <div class="mt-2 mb-4">
+      <%= form.text_area :description, rows: 4, class: "block w-full rounded-md text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 " %>
+    </div>
+
+    <%= form.label :status, class:"block text-sm/6 font-medium text-gray-900"  %>
+    <%= form.select :status, Project.statuses.keys.map { |s| [s.humanize, s] }, {}, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" %>
+
+
+    <!-- Hidden Field to Store the Current User -->
+    <%= form.hidden_field :user_id, value: current_user.id %>
+
+    <div class="mt-8">
+      <%= form.submit "Create Project", class: "flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
+    </div>
+  <% end %>
+
+  <div class="pt-6">
+    <%= link_to "Back to projects", projects_path, local: true, data: { turbo: false}, class: "text-lg font-semi-bold underline hover:text-blue-700"  %>
+  </div>
+</div>
