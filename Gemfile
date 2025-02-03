@@ -57,7 +57,6 @@ group :development, :test do
 
   gem "rspec-rails", "~> 7.1"
   gem "factory_bot_rails", "~> 6.4", ">= 6.4.4"
-
 end
 
 group :development do
@@ -65,4 +64,3 @@ group :development do
   gem "web-console"
   gem "database_cleaner-active_record", "~> 2.2.0"
 end
-
