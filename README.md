@@ -88,3 +88,8 @@ Given the limited information of the task, these are some of the questions that 
 * `bin/dev` or `rails s` to run the app
 * `bundle exec rspec` to run the tests
 
+**Testing with RSpec:**
+* `bundle exec rspec`
+
+**Linting with RuboCop:**
+* `bundle exec rubocop`
