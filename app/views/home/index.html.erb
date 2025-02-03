@@ -1,0 +1,15 @@
+<div>
+  <h1 class="font-bold text-4xl">Welcome to Homey Projects</h1>
+
+  <div class="pt-6 text-2xl">
+    <p>This is a basic demo app to build a project conversation history</p>
+  </div>
+
+  <% if current_user %>
+    <div class="pt-12">
+      <%= link_to "Go to Projects", projects_path, local: true, data: { turbo: false} %>
+    </div>
+  <% else %>
+    <p class="pt-12 text-lg"><%=link_to "Sign up", new_user_path, local: true, data: { turbo: false}, class: "font-semi-bold underline hover:text-blue-700" %> or <%= link_to "Log in", login_path, local: true, data: { turbo: false}, class: "font-semi-bold underline hover:text-blue-700" %> to continue</p>
+  <% end %>
+</div>

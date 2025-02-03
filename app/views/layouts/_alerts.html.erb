@@ -1,0 +1,17 @@
+<div class="w-full p-6 text-center">
+  <div class="container mx-auto alert" data-controller="alert" id="alert">
+    <% unless notice.blank? %>
+      <div class="flex bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+        <span class="block flex-1 sm:inline"><%= notice %></span>
+        <button type="button" class="fa-solid fa-xmark fa-2xl" data-dismiss="alert" data-action="alert#close" aria-label="Close"><span aria-hidden="true"></span></button>
+      </div>
+    <% end %>
+
+    <% unless alert.blank? %>
+      <div class="flex bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+        <span class="block flex-1 sm:inline"><%= alert %></span>
+        <button type="button" class="fa-solid fa-xmark fa-2xl" data-dismiss="alert" data-action="alert#close" aria-label="Close"><span aria-hidden="true"></span></button>
+      </div>
+    <% end %>
+  </div>
+</div>

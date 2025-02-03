@@ -1,0 +1,16 @@
+<nav class="flex justify-between bg-gray-500 text-white text-xl font-bold p-6">
+  <div>
+      <span class="font-semibold text-xl tracking-tight hover:text-blue-400">
+        <%= link_to 'Homey Projects', root_path %>
+      </span>
+  </div>
+  <div class="flex">
+    <% if logged_in? %>
+      <p class="hover:text-blue-400 pr-6">Welcome, <%= current_user.name %> </p>
+      <%= button_to "Logout", logout_path, method: :delete, data: { turbo: false }, class: "hover:text-blue-400" %>
+    <% else %>
+      <%= link_to "Login", login_path, class: "hover:text-blue-400 pr-6" %>
+      <%= link_to "Sign Up", new_user_path, class: "hover:text-blue-400" %>
+    <% end %>
+  </div>
+</nav>
